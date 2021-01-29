@@ -1,0 +1,831 @@
+[
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "SpillTheBeans123",
+        "Size": 4,
+        "ArriveTime": "2021-01-28T13:00:49.9669014+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 1,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "caru55",
+        "Size": 4,
+        "ArriveTime": "2021-01-28T21:16:53.4038161+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 2,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "mcamen123",
+        "Size": 2,
+        "ArriveTime": "2021-01-27T17:01:42.8102701+01:00"
+      },
+      {
+        "RegPlate": "mctuu77",
+        "Size": 2,
+        "ArriveTime": "2021-01-28T21:18:30.8160501+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 3,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "pepe123",
+        "Size": 2,
+        "ArriveTime": "2021-01-28T21:19:33.6654835+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 4,
+    "TotalSpace": 4,
+    "AvailableSpace": 2
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "mcattempt2",
+        "Size": 2,
+        "ArriveTime": "2021-01-25T14:32:06.0884666+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 5,
+    "TotalSpace": 4,
+    "AvailableSpace": 2
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "caris123",
+        "Size": 4,
+        "ArriveTime": "2021-01-27T17:21:09.5436476+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 6,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "mcIsFuckingWorkingWoho123",
+        "Size": 2,
+        "ArriveTime": "2021-01-25T14:33:33.0613574+01:00"
+      },
+      {
+        "RegPlate": "ccc12345678",
+        "Size": 2,
+        "ArriveTime": "2021-01-28T13:37:02.8967927+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 7,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "oofer123",
+        "Size": 4,
+        "ArriveTime": "2021-01-25T12:33:12.5905449+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 8,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "Thicc89",
+        "Size": 4,
+        "ArriveTime": "2021-01-28T17:19:31.5598568+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 9,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "stupidCarJustWork123",
+        "Size": 4,
+        "ArriveTime": "2021-01-25T15:53:58.7592754+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 10,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "mctry1234567",
+        "Size": 2,
+        "ArriveTime": "2021-01-25T15:55:29.1844523+01:00"
+      },
+      {
+        "RegPlate": "carOrMcHybrid123",
+        "Size": 2,
+        "ArriveTime": "2021-01-25T15:56:36.7010495+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 11,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "cart123",
+        "Size": 4,
+        "ArriveTime": "2021-01-27T19:26:18.4693575+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 12,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "nevrlan123",
+        "Size": 4,
+        "ArriveTime": "2021-01-28T13:02:29.8383194+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 13,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "UGR123",
+        "Size": 2,
+        "ArriveTime": "2021-01-28T14:43:16.5910661+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 14,
+    "TotalSpace": 4,
+    "AvailableSpace": 2
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 15,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "neverlandyboi123",
+        "Size": 4,
+        "ArriveTime": "2021-01-28T18:51:29.250658+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 16,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "mctry123",
+        "Size": 2,
+        "ArriveTime": "2021-01-25T11:21:19.9769201+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 17,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 18,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 19,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "car123",
+        "Size": 4,
+        "ArriveTime": "2021-01-24T18:44:26.6649894+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "kmsworking123",
+        "Size": 2,
+        "ArriveTime": "2021-01-24T15:05:48.174264+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 2
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "mckys123",
+        "Size": 2,
+        "ArriveTime": "2021-01-25T11:15:38.6552862+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 2
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  },
+  {
+    "globalSet": null,
+    "vehicles": [],
+    "ParkingSpotNumber": 0,
+    "TotalSpace": 4,
+    "AvailableSpace": 4
+  }
+]
