@@ -16,10 +16,18 @@ namespace Prague_Parking_2._0
         {
             return RegPlate + " Parked at:" + ArriveTime;
         }
-        
         public void Print()
         {
+            if (RegPlate.Length >= 8)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write(RegPlate.Substring(0, 8));
+                Console.ForegroundColor = ConsoleColor.White;
+                return;
+            }
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("{0:8}", RegPlate);
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public static string ExitTimeCalculator(string CheckIn)
         {

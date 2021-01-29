@@ -32,14 +32,16 @@ namespace Prague_Parking_2._0
                 Table table = new Table().Centered();
                 Console.Clear();
                 AnsiConsole.Render(new FigletText("PRAGUE PARKING!").LeftAligned().Color(Color.Aqua));
-                DateTime date = DateTime.Now;
-                int year = date.Year; int month = date.Month; int day = date.Day;
-                var calendar = new Calendar(year, month);
-                calendar.AddCalendarEvent(year, month, day);
-                calendar.HighlightStyle(Style.Parse("green"));
-                //calendar.Alignment = Justify.Right;
-                AnsiConsole.Render(calendar);
-                Console.WriteLine($"Today we have {parkingHouse.parkingSpots.Count} available parkingspaces.");
+
+                //DateTime date = DateTime.Now;
+                //int year = date.Year; int month = date.Month; int day = date.Day;
+                //var calendar = new Calendar(year, month);
+                //calendar.AddCalendarEvent(year, month, day);
+                //calendar.HighlightStyle(Style.Parse("green"));
+                ////calendar.Alignment = Justify.Right;
+                //AnsiConsole.Render(calendar);
+
+                //Console.WriteLine($"Today we have {parkingHouse.parkingSpots.Count} available parkingspaces.");
                 table.AddColumn(new TableColumn(new Markup("[Bold blue]Menu[/]")));
                 var selectInMenu = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()

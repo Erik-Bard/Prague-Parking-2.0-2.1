@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Spectre.Console;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -21,9 +22,7 @@ namespace Prague_Parking_2._0
 
         }
         public int TotalSpace { get; set; }         // Size of EMPTY spot
-
         public int AvailableSpace { get; set; }    // Available space
-
         public bool AddVehicle(Vehicle vehicle)
         {
             if (CheckAvailableSpace(vehicle))
@@ -53,13 +52,12 @@ namespace Prague_Parking_2._0
         // Claes Availability-Check
         public void Print()
         {
-            foreach(var vehicle in vehicles) 
+            Console.Write($"At:{ParkingSpotNumber}");
+            foreach (var vehicle in vehicles) 
             {
-                Console.Write("{0:3}: ", ParkingSpotNumber);
+                Console.Write(", ");
                 vehicle.Print();
             }
-            
         }
-        // Claes print method
     }
 }

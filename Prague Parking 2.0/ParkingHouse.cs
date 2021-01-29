@@ -330,42 +330,48 @@ namespace Prague_Parking_2._0
 
         public void Print()
         {
-            Table table = new Table().Centered();
-            table.AddColumn("[Blue]Print Start[/]");
-            AnsiConsole.Render(table);
-            //int nSpotsPerRow = 7;
-            //for (int i = 0; i < parkingSpots.Count - nSpotsPerRow; i += nSpotsPerRow)
-            //{
-            //    for (int j = 0; j < nSpotsPerRow; j++)
-            //    {
-            //        Console.Write("| {0} ");
-            //        parkingSpots[i + j].Print();
-            //        //table.AddRow($"No: {parkingSpots[i]} : Contains {parkingSpots[i].vehicles[i].RegPlate}");
-            //    }
-            //    Console.WriteLine();
-            //}
-            Table tuble = new Table().Centered();
-            tuble.AddColumn("[Red]Red = Empty[/] [Green]Green = Car[/] [Yellow]Yellow = MC[/]");
-            foreach (var item in parkingSpots)
+            var MapTitle = new Rule("Map over the Parkinghouse");
+            AnsiConsole.Render(MapTitle);
+            var ColorCode = new Rule("Green = Empty, Yellow = Half filled, Red = Full");
+            AnsiConsole.Render(ColorCode);
+            for (int i = 0; i < parkingSpots.Count; i++)
             {
-                if (item.AvailableSpace == 4)
+                Table Table = new Table().Centered();
+                string colour;
+                var Result = "";
+                int length = i + 25;      // [NOTE] SET X amount of spots/row 
+                for (int j = i; j < length; j++)
                 {
-                    tuble.AddRow($"At: {item.ParkingSpotNumber} [Red]Empty Spot[/]");
-                }
-                int index = parkingSpots.IndexOf(item);
-                foreach (var f in item.vehicles)
-                {
-                    if (f.Size == settings.mcSize)
+                    if (j >= parkingSpots.Count)
                     {
-                        tuble.AddRow($"At: {item.ParkingSpotNumber} : Contains [Yellow]{f.RegPlate}[/]");
+                        break;
                     }
-                    if (f.Size == settings.carSize)
+                    if (parkingSpots[j].AvailableSpace == settings.ParkingSpotSize)
                     {
-                        tuble.AddRow($"At: {item.ParkingSpotNumber} : Contains [Green]{f.RegPlate}[/]");
+                        colour = "green";
                     }
+                    else if (parkingSpots[j].AvailableSpace == settings.ParkingSpotSize - settings.mcSize && parkingSpots[j].AvailableSpace == settings.mcSize)
+                    {
+                        colour = "yellow";
+                    }
+                    else if (parkingSpots[j].AvailableSpace == 0 && parkingSpots[j].TotalSpace == settings.carSize)
+                    {
+                        colour = "red";
+                    }
+                    else if (parkingSpots[j].AvailableSpace == 0 && parkingSpots[j].AvailableSpace == settings.carSize)
+                    {
+                        colour = "red";
+                    }
+                    else 
+                    { 
+                        colour = "Orange"; 
+                    }
+                    Result += ($"P{j + 1}.[{colour}]X[/] ");
                 }
+                Table.AddColumn(new TableColumn(Result));
+                i += 24;
+                AnsiConsole.Render(Table);
             }
-            AnsiConsole.Render(tuble);
         }
     }
 }
