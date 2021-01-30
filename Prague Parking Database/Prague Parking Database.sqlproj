@@ -6,7 +6,7 @@
     <Name>Prague_Parking_Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{5858fdf8-37db-4d5b-b733-4e1420326cc8}</ProjectGuid>
+    <ProjectGuid>{f314b896-37fe-4335-8037-cb002c928526}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -56,5 +56,16 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="ParkingHouse.sql" />
+    <Build Include="ParkingSpot.sql" />
+    <Build Include="Vehicle.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Prague Parking Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Prague Parking Database.publish.xml" />
   </ItemGroup>
 </Project>

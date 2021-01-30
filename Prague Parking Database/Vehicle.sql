@@ -5,5 +5,6 @@
     [RegPlate] NVARCHAR(50) NULL, 
     [Size] INT NULL, 
     [ArriveTime] DATETIME NULL, 
-    CONSTRAINT [FK_Vehicle_ToParkingSpot] FOREIGN KEY ([Id]) REFERENCES [ParkingSpot]([Id]) 
+    CONSTRAINT [FK_Vehicle_ToParkingSpot] FOREIGN KEY ([ParkingSpotId])
+    REFERENCES [ParkingSpot]([Id])
 )
