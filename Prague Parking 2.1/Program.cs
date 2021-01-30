@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Configuration;
-using System.Collections.Specialized;
-using System.Text.RegularExpressions;
-using System.Linq;
 
-namespace Prague_Parking_2._0
+namespace Prague_Parking_2._1
 {
     class Program
     {
-        // Extra Tack till Denis, Daniel och Marcus // 
+        // Extra Tack till Denis, Daniel och Marcus //
         static void Main(string[] args)
         {
             var control = new Control();
@@ -21,5 +15,4 @@ namespace Prague_Parking_2._0
             Console.ReadKey();
         }
     }
-
 }

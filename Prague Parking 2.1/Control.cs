@@ -1,12 +1,6 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System;
 
-namespace Prague_Parking_2._0
+namespace Prague_Parking_2._1
 {
     public class Control
     {

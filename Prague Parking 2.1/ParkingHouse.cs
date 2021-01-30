@@ -4,8 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Spectre.Console;
+using System.Linq;
 
-namespace Prague_Parking_2._0
+namespace Prague_Parking_2._1
 {
     public class ParkingHouse
     {
@@ -85,14 +86,14 @@ namespace Prague_Parking_2._0
             }
             return null;
         }
-        // Take vehicle and return first empty / available spot
         public void ParkVehicle()
         {
-            Console.WriteLine("Park a Car or Mc?");
+            Console.WriteLine("Park a Car, MC, Bike or Bus");
             string VehicleChoise = Console.ReadLine();
             VehicleChoise.ToLower();
             Console.WriteLine("Enter registration plate: ");
             string input = Console.ReadLine();
+            input.ToUpper();
             switch (VehicleChoise)
             {
                 case "car":
@@ -126,7 +127,77 @@ namespace Prague_Parking_2._0
                     Console.WriteLine("Done");
                     Console.ReadKey();
                     break;
+
+                case "bike":
+                    Bike bike = new Bike();
+                    bike.RegPlate = input;
+                    bike.ArriveTime = DateTime.Now;
+
+                    ParkingSpot spot1;
+                    spot1 = FindAvailableSpot(bike);
+                    if (spot1 != null)
+                    {
+                        spot1.AddVehicle(bike);
+                        WriteToFile();
+                        Console.WriteLine("Your bike is now parked.");
+                        Console.ReadKey();
+                    }
+                    else
+                        Console.WriteLine("No empty spots available.");
+                    Console.ReadKey();
+                    break;
+
+                case "bus":
+                    Bus bus = new Bus();
+                    bus.RegPlate = input;
+                    bus.ArriveTime = DateTime.Now;
+
+                    int placeToPark;
+                    placeToPark = SpotAsInt();
+                    if(placeToPark == 0 || placeToPark == -1)
+                    {
+                        Console.WriteLine("No empty spots available.");
+                    }
+                    else
+                    {
+                        for (int i = placeToPark; i < placeToPark + 4; i++)
+                        {
+                            parkingSpots[i].vehicles.Add(bus);
+                            parkingSpots[i].AvailableSpace = 0;
+                        }
+                        WriteToFile();
+                    }
+                    Console.ReadKey();
+                    break;
             }
+        }
+        public int SpotAsInt()
+        {
+            int BusSpot;
+            int SpotsInRow;
+            int parkingLots = parkingSpots.Count > 50 ? 50 : parkingSpots.Count;
+            for (int i = 0; i < parkingLots - 4; i++)
+            {
+                SpotsInRow = 0;
+                for (int s = i; s < i + 4; s++)
+                {
+                    if (parkingSpots[s].AvailableSpace == 4)
+                    {
+                        SpotsInRow += 1;
+                    }
+                    if (parkingSpots[s].AvailableSpace == 0)
+                    {
+                        SpotsInRow = 0;
+                    }
+                }
+                if (SpotsInRow == 4)
+                {
+                    BusSpot = i;
+                    Console.WriteLine($"Parking here: {BusSpot+1}");
+                    return BusSpot;
+                }
+            }
+            return -1;
         }
         public void MoveVehicle()
         {
@@ -135,31 +206,37 @@ namespace Prague_Parking_2._0
             ParkReturnedVehicle(vehicle);
             Console.ReadKey();
         }
+        // Prague Parking 2.1 version of Search vehicle uses Lambda Expressions
         public int? SearchForVehicle(string regNumber)
         {
-            foreach (var item in parkingSpots)
+            var FoundValue = parkingSpots.Find(x => x.vehicles.Find(y => y.RegPlate == regNumber) != null);
+            int index = parkingSpots.IndexOf(FoundValue);
+            Console.WriteLine($"Your vehicle is parked at {index+1}");
+            Console.ReadKey();
+            return index;
+        }
+        // DisplayEmptySpots use Linq to show the amount of empty spaces
+        public void DisplayEmptySpots()
+        {
+            var spots = from stuff in parkingSpots where stuff.AvailableSpace == settings.ParkingSpotSize select new { stuff };
+            int counter = 0;
+            foreach (var spot in spots)
             {
-                foreach (Vehicle v in item.vehicles)
-                {
-                    if (v.RegPlate.Equals(regNumber))
-                    {
-                        int indexlmao = parkingSpots.IndexOf(item);
-                        return indexlmao;
-                    }
-                }
+                counter++;
             }
-            return -1;
+            Console.WriteLine($"Today we have {counter} empty lots!");
         }
         public void RemoveVehicle()
         {
             Console.WriteLine("Which vehicle do you wish us to retrieve and exit with?");
             string VehicleExit = Console.ReadLine();
+            VehicleExit.ToUpper();
             int indexPog;
             foreach (var item in parkingSpots)
             {
                 foreach (Vehicle v in item.vehicles)
                 {
-                    if (v.RegPlate.Equals(VehicleExit) && v.Size == 4)
+                    if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.carSize)
                     {
                         indexPog = parkingSpots.IndexOf(item);
                         Console.WriteLine($"Found at: {indexPog}");
@@ -175,7 +252,7 @@ namespace Prague_Parking_2._0
                         Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
                         break;
                     }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == 2)
+                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize)
                     {
                         indexPog = parkingSpots.IndexOf(item);
                         Console.WriteLine($"Found at: {indexPog}");
@@ -187,7 +264,7 @@ namespace Prague_Parking_2._0
                         Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
                         break;
                     }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == 2 && item != null)
+                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize && item != null)
                     {
                         indexPog = parkingSpots.IndexOf(item);
                         Console.WriteLine($"Found at: {indexPog}");
@@ -203,6 +280,30 @@ namespace Prague_Parking_2._0
                         string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
                         item.AvailableSpace += v.Size;
                         item.vehicles.RemoveAt(IndexChoise);
+                        Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
+                        break;
+                    }
+                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.bikeSize)
+                    {
+                        indexPog = parkingSpots.IndexOf(item);
+                        Console.WriteLine($"Found at: {indexPog}");
+                        string checkin = v.ArriveTime.ToString();
+                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                        item.AvailableSpace += v.Size;
+                        item.vehicles.Remove(v);
+                        Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
+                        break;
+                    }
+                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.busSize)
+                    {
+                        indexPog = parkingSpots.IndexOf(item);
+                        Console.WriteLine($"Found at: {indexPog}");
+                        string checkin = v.ArriveTime.ToString();
+                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                        item.AvailableSpace = settings.ParkingSpotSize;
+                        item.vehicles.Remove(v);
                         Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
                         break;
                     }
@@ -222,7 +323,7 @@ namespace Prague_Parking_2._0
             {
                 foreach (Vehicle v in item.vehicles)
                 {
-                    if (v.RegPlate.Equals(VehicleExit) && v.Size == 4)
+                    if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.carSize)
                     {
                         indexPog = parkingSpots.IndexOf(item);
                         Console.WriteLine($"Found at: {indexPog}");
@@ -242,7 +343,7 @@ namespace Prague_Parking_2._0
                         item.vehicles.Remove(v);
                         return VehicleReturn;
                     }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == 2)
+                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize)
                     {
                         indexPog = parkingSpots.IndexOf(item);
                         Console.WriteLine($"Found at: {indexPog}");
@@ -258,6 +359,38 @@ namespace Prague_Parking_2._0
                         item.vehicles.Remove(v);
                         return VehicleReturn;
                     }
+                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.bikeSize)
+                    {
+                        indexPog = parkingSpots.IndexOf(item);
+                        Console.WriteLine($"Found at: {indexPog}");
+                        string checkin = v.ArriveTime.ToString();
+                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                        item.AvailableSpace += v.Size;
+                        Bike bikeCopy = new Bike();
+                        bikeCopy.RegPlate = v.RegPlate;
+                        bikeCopy.Size = v.Size;
+                        bikeCopy.ArriveTime = v.ArriveTime;
+                        Bike VehicleReturn = bikeCopy;
+                        item.vehicles.Remove(v);
+                        return VehicleReturn;
+                    }
+                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.busSize)
+                    {
+                        indexPog = parkingSpots.IndexOf(item);
+                        Console.WriteLine($"Found at: {indexPog}");
+                        string checkin = v.ArriveTime.ToString();
+                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                        item.AvailableSpace += v.Size;
+                        Bus busCopy = new Bus();
+                        busCopy.RegPlate = v.RegPlate;
+                        busCopy.Size = v.Size;
+                        busCopy.ArriveTime = v.ArriveTime;
+                        Bus VehicleReturn = busCopy;
+                        item.vehicles.Remove(v);
+                        return VehicleReturn;
+                    }
                 }
             }
             WriteToFile();
@@ -268,6 +401,8 @@ namespace Prague_Parking_2._0
         {
             Car newCar = new Car();
             MC newMC = new MC();
+            Bike newBike = new Bike();
+            Bus newBus = new Bus();
             if (VehicleReturn.Size == newCar.Size)
             {
                 newCar.RegPlate = VehicleReturn.RegPlate;
@@ -286,7 +421,7 @@ namespace Prague_Parking_2._0
                     Console.WriteLine("No empty spots available.");
 
             }
-            if (VehicleReturn.Size == newMC.Size)
+            else if(VehicleReturn.Size == newMC.Size)
             {
                 newMC.RegPlate = VehicleReturn.RegPlate;
                 newMC.Size = VehicleReturn.Size;
@@ -294,6 +429,28 @@ namespace Prague_Parking_2._0
                 ParkingSpot Spot;
                 Spot = FindAvailableSpot(newMC);
                 Spot.AddVehicle(newMC);
+                WriteToFile();
+                Console.WriteLine("Done");
+            }
+            else if (VehicleReturn.Size == newBike.Size)
+            {
+                newBike.RegPlate = VehicleReturn.RegPlate;
+                newBike.Size = VehicleReturn.Size;
+                newBike.ArriveTime = VehicleReturn.ArriveTime;
+                ParkingSpot Spot;
+                Spot = FindAvailableSpot(newBike);
+                Spot.AddVehicle(newBike);
+                WriteToFile();
+                Console.WriteLine("Done");
+            }
+            else if (VehicleReturn.Size == newBus.Size)
+            {
+                newBus.RegPlate = VehicleReturn.RegPlate;
+                newBus.Size = VehicleReturn.Size;
+                newBus.ArriveTime = VehicleReturn.ArriveTime;
+                ParkingSpot Spot;
+                Spot = FindAvailableSpot(newBus);
+                Spot.AddVehicle(newBus);
                 WriteToFile();
                 Console.WriteLine("Done");
             }

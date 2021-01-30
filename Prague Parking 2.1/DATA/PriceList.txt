@@ -1,0 +1,10 @@
+[
+  "Prague Parking Pricelist",
+  "-----------------",
+  "Car: 20 CZK/Hour",
+  "MC: 10 CZK/Hour",
+  "Bike: 5 CZK/Hour",
+  "Bus: 80 CZK/Hour",
+  "---------------",
+  "First 10 minutes are free!"
+]

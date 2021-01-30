@@ -1,37 +1,20 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System;
 using Spectre.Console;
 
-namespace Prague_Parking_2._0
+namespace Prague_Parking_2._1
 {
     public class Menu
     {
-        //public static string[] entities;
-        ////public static int menuSelection;
-        //public static int index;
-        //public static int index1;
-        //public static Vehicle CarCopy { get; set; }
-        //public static int NumberOfSpots { get; set; }
-        //public static string joined;
-        //public static bool CompareFull = true;
-        //public static string CarInput;
-        //public static string mc;
-        //public static string SF;
-        //public static string oofer;
-        //public static bool LoopMain = true;
-
         public static void StartUpMenu()
         {
             ParkingHouse parkingHouse = new ParkingHouse("../../../DATA/JsonDB.json");
-            while(true)
+            ParkingSpot.InstallSettings();
+            while (true)
             {
                 Table table = new Table().Centered();
                 Console.Clear();
                 AnsiConsole.Render(new FigletText("PRAGUE PARKING!").LeftAligned().Color(Color.Aqua));
+                parkingHouse.DisplayEmptySpots();
                 table.AddColumn(new TableColumn(new Markup("[Bold blue]Menu[/]")));
                 var selectInMenu = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
@@ -76,18 +59,5 @@ namespace Prague_Parking_2._0
                 }
             }
         }
-        //public static void PopulateListAtStart()
-        //{
-        //    try
-        //    {
-        //        Control control = new Control();
-        //        control.DeserializeObject();
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine("Error in reading file.");
-        //        Console.WriteLine(e.Message);
-        //    }
-        //}
     }
 }

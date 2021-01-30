@@ -1,6 +1,5 @@
 [
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "AAA333",
@@ -13,12 +12,11 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
-        "RegPlate": "BBB333",
+        "RegPlate": "YRJ123",
         "Size": 4,
-        "ArriveTime": "2021-01-28T21:16:53.4038161+01:00"
+        "ArriveTime": "2021-01-30T15:07:32.2602278+01:00"
       }
     ],
     "ParkingSpotNumber": 2,
@@ -26,17 +24,11 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
-        "RegPlate": "CCC123",
-        "Size": 2,
-        "ArriveTime": "2021-01-27T17:01:42.8102701+01:00"
-      },
-      {
-        "RegPlate": "GGG555",
-        "Size": 2,
-        "ArriveTime": "2021-01-28T21:18:30.8160501+01:00"
+        "RegPlate": "OOP123",
+        "Size": 16,
+        "ArriveTime": "2021-01-29T17:25:53.0940205+01:00"
       }
     ],
     "ParkingSpotNumber": 3,
@@ -44,38 +36,35 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
-        "RegPlate": "HHH666",
-        "Size": 2,
-        "ArriveTime": "2021-01-28T21:19:33.6654835+01:00"
+        "RegPlate": "OOP123",
+        "Size": 16,
+        "ArriveTime": "2021-01-29T17:25:53.0940205+01:00"
       }
     ],
     "ParkingSpotNumber": 4,
     "TotalSpace": 4,
-    "AvailableSpace": 2
+    "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
-        "RegPlate": "FFF331",
-        "Size": 2,
-        "ArriveTime": "2021-01-25T14:32:06.0884666+01:00"
+        "RegPlate": "OOP123",
+        "Size": 16,
+        "ArriveTime": "2021-01-29T17:25:53.0940205+01:00"
       }
     ],
     "ParkingSpotNumber": 5,
     "TotalSpace": 4,
-    "AvailableSpace": 2
+    "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
-        "RegPlate": "OOP301",
-        "Size": 4,
-        "ArriveTime": "2021-01-27T17:21:09.5436476+01:00"
+        "RegPlate": "OOP123",
+        "Size": 16,
+        "ArriveTime": "2021-01-29T17:25:53.0940205+01:00"
       }
     ],
     "ParkingSpotNumber": 6,
@@ -83,7 +72,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "KDG123",
@@ -101,7 +89,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "PHI123",
@@ -114,7 +101,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "GGF123",
@@ -127,7 +113,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "GBN123",
@@ -140,7 +125,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "CFC123",
@@ -158,7 +142,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "OKL123",
@@ -171,7 +154,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "LOK123",
@@ -184,7 +166,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "UGR123",
@@ -197,14 +178,18 @@
     "AvailableSpace": 2
   },
   {
-    "globalSet": null,
-    "vehicles": [],
+    "vehicles": [
+      {
+        "RegPlate": "OIJ123",
+        "Size": 4,
+        "ArriveTime": "2021-01-29T15:02:52.3514889+01:00"
+      }
+    ],
     "ParkingSpotNumber": 15,
     "TotalSpace": 4,
-    "AvailableSpace": 4
+    "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "IUL123",
@@ -217,7 +202,6 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "URL123",
@@ -230,83 +214,102 @@
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [],
     "ParkingSpotNumber": 18,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
     "ParkingSpotNumber": 19,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
     "vehicles": [
       {
-        "RegPlate": "CAR123",
+        "RegPlate": "CPU123",
         "Size": 4,
-        "ArriveTime": "2021-01-24T18:44:26.6649894+01:00"
+        "ArriveTime": "2021-01-25T11:22:19.9769201+01:00"
       }
     ],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 20,
     "TotalSpace": 4,
     "AvailableSpace": 0
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 21,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "GPU123",
+        "Size": 4,
+        "ArriveTime": "2021-01-25T11:22:19.9769201+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 22,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "vehicles": [
+      {
+        "RegPlate": "BUS678",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:07:46.6122548+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 23,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "vehicles": [
+      {
+        "RegPlate": "BUS678",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:07:46.6122548+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 24,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "vehicles": [
+      {
+        "RegPlate": "BUS678",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:07:46.6122548+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 25,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "vehicles": [
+      {
+        "RegPlate": "BUS678",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:07:46.6122548+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 26,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 27,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "TTY123",
@@ -314,47 +317,65 @@
         "ArriveTime": "2021-01-24T15:05:48.174264+01:00"
       }
     ],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 28,
     "TotalSpace": 4,
     "AvailableSpace": 2
   },
   {
-    "globalSet": null,
+    "vehicles": [
+      {
+        "RegPlate": "BUS465",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:09:03.7525676+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 29,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "vehicles": [
+      {
+        "RegPlate": "BUS465",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:09:03.7525676+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 30,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "vehicles": [
+      {
+        "RegPlate": "BUS465",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:09:03.7525676+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 31,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
+    "vehicles": [
+      {
+        "RegPlate": "BUS465",
+        "Size": 16,
+        "ArriveTime": "2021-01-30T15:09:03.7525676+01:00"
+      }
+    ],
+    "ParkingSpotNumber": 32,
+    "TotalSpace": 4,
+    "AvailableSpace": 0
+  },
+  {
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 33,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
-    "vehicles": [],
-    "ParkingSpotNumber": 0,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "globalSet": null,
     "vehicles": [
       {
         "RegPlate": "NNM123",
@@ -362,469 +383,403 @@
         "ArriveTime": "2021-01-25T11:15:38.6552862+01:00"
       }
     ],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 34,
     "TotalSpace": 4,
     "AvailableSpace": 2
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 35,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 36,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 37,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 38,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 39,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 40,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 41,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 42,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 43,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 44,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 45,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 46,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 47,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 48,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 49,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 50,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 51,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 52,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 53,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 54,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 55,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 56,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 57,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 58,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 59,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 60,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 61,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 62,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 63,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 64,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 65,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 66,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 67,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 68,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 69,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 70,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 71,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 72,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 73,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 74,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 75,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 76,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 77,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 78,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 79,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 80,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 81,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 82,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 83,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 84,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 85,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 86,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 87,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 88,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 89,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 90,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 91,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 92,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 93,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 94,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 95,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 96,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 97,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 98,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 99,
     "TotalSpace": 4,
     "AvailableSpace": 4
   },
   {
-    "globalSet": null,
     "vehicles": [],
-    "ParkingSpotNumber": 0,
+    "ParkingSpotNumber": 100,
     "TotalSpace": 4,
     "AvailableSpace": 4
   }
