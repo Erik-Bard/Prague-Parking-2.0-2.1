@@ -684,10 +684,12 @@ namespace Prague_Parking_2._1
                     else
                     {
                         NumberOfPlots += 1;
-                        //Console.WriteLine("Stop, you cant downsize when there is a vehicle parked there!");
-                        // [NOTE] Maybe Show what vehicle/vehicles are parked? //
-                        //Console.ReadKey();
-                        //break;
+                        Table newTable = new Table();
+                        newTable.AddColumn("[BOLD RED]Stop! You cannot downsize when there is a vehicle parked there![/]");
+                        newTable.AddRow("[BOLD GREEN]Please remove the vehicle/vehicles before trying to change the amount of spots.[/]");
+                        AnsiConsole.Render(newTable);
+                        Console.ReadKey();
+                        break;
                     }
                 }
                 WriteToFile();

@@ -892,15 +892,15 @@
     "AvailableSpace": 4
   },
   {
-    "vehicles": [],
+    "vehicles": [
+      {
+        "RegPlate": "BBB443",
+        "Size": 4,
+        "ArriveTime": "2021-01-28T13:00:49.9669014+01:00"
+      }
+    ],
     "ParkingSpotNumber": 119,
     "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 120,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
+    "AvailableSpace": 0
   }
 ]
