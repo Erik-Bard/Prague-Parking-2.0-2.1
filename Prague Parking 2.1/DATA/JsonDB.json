@@ -214,10 +214,16 @@
     "AvailableSpace": 0
   },
   {
-    "vehicles": [],
+    "vehicles": [
+      {
+        "RegPlate": "TCAR212",
+        "Size": 4,
+        "ArriveTime": "2021-01-31T15:41:17.658155+01:00"
+      }
+    ],
     "ParkingSpotNumber": 18,
     "TotalSpace": 4,
-    "AvailableSpace": 4
+    "AvailableSpace": 0
   },
   {
     "vehicles": [],
@@ -782,125 +788,5 @@
     "ParkingSpotNumber": 100,
     "TotalSpace": 4,
     "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 101,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 102,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 103,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 104,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 105,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 106,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 107,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 108,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 109,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 110,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 111,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 112,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 113,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 114,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 115,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 116,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 117,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [],
-    "ParkingSpotNumber": 118,
-    "TotalSpace": 4,
-    "AvailableSpace": 4
-  },
-  {
-    "vehicles": [
-      {
-        "RegPlate": "BBB443",
-        "Size": 4,
-        "ArriveTime": "2021-01-28T13:00:49.9669014+01:00"
-      }
-    ],
-    "ParkingSpotNumber": 119,
-    "TotalSpace": 4,
-    "AvailableSpace": 0
   }
 ]

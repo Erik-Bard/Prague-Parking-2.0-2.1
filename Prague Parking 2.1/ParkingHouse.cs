@@ -202,7 +202,7 @@ namespace Prague_Parking_2._1
                 SpotsInRow = 0;
                 for (int s = i; s < i + 4; s++)
                 {
-                    if (parkingSpots[s].AvailableSpace == 4)
+                    if (parkingSpots[s].AvailableSpace == settings.ParkingSpotSize)
                     {
                         SpotsInRow += 1;
                     }
