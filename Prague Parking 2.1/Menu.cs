@@ -23,7 +23,7 @@ namespace Prague_Parking_2._1
                     .AddChoices(new[] {
                     "Park Vehicle", "Move Vehicle",
                     "Find Vehicle", "Retrieve & Exit withVehicle", "See Overview of Garage",
-                    "View entire Garage", "View our List of Prices", "Exit Program",
+                    "View entire Garage", "View our List of Prices", "Change Settings", "Exit Program",
                     }));
                 switch (selectInMenu)
                 {
@@ -51,6 +51,9 @@ namespace Prague_Parking_2._1
                         break;
                     case "View our List of Prices":
                         PriceList.priceList();
+                        break;
+                    case "Change Settings":
+                        parkingHouse.ChangeSettings();
                         break;
                     case "Exit Program":
                         return;

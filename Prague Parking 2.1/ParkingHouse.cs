@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using Spectre.Console;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Prague_Parking_2._1
 {
@@ -90,85 +91,105 @@ namespace Prague_Parking_2._1
         {
             Console.WriteLine("Park a Car, MC, Bike or Bus");
             string VehicleChoise = Console.ReadLine();
-            VehicleChoise.ToLower();
-            Console.WriteLine("Enter registration plate: ");
-            string input = Console.ReadLine();
-            input.ToUpper();
-            switch (VehicleChoise)
+            string lowerVehiceChoise = VehicleChoise.ToLower();
+            string ValidVehicleChoise = DataValidation(lowerVehiceChoise);
+            if (ValidVehicleChoise == null)
             {
-                case "car":
-                    Car car = new Car();
-                    car.RegPlate = input;
-                    car.ArriveTime = DateTime.Now;
+                Console.WriteLine("Invalid Option.");
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Enter registration plate: ");
+                string input = Console.ReadLine();
+                input = input.ToUpper();
+                string ValidRegPlate = DataValidation(input);
+                if (ValidRegPlate == null)
+                {
+                    Console.WriteLine("Invalid Reg-Plate.");
+                }
+                switch (lowerVehiceChoise)
+                {
+                    case "car":
+                        Car car = new Car();
+                        car.RegPlate = input;
+                        car.ArriveTime = DateTime.Now;
 
-                    ParkingSpot spot;
-                    spot = FindAvailableSpot(car);
-                    if (spot != null)
-                    {
-                        spot.AddVehicle(car);
-                        WriteToFile();
-                        Console.WriteLine("Your car is now parked.");
-                        Console.ReadKey();
-                    }
-                    else
-                        Console.WriteLine("No empty spots available.");
-                        Console.ReadKey();
-                    break;
-
-                case "mc":
-                    MC newMC = new MC();
-                    newMC.RegPlate = input;
-                    newMC.ArriveTime = DateTime.Now;
-
-                    ParkingSpot Spot;
-                    Spot = FindAvailableSpot(newMC);
-                    Spot.AddVehicle(newMC);
-                    WriteToFile();
-                    Console.WriteLine("Done");
-                    Console.ReadKey();
-                    break;
-
-                case "bike":
-                    Bike bike = new Bike();
-                    bike.RegPlate = input;
-                    bike.ArriveTime = DateTime.Now;
-
-                    ParkingSpot spot1;
-                    spot1 = FindAvailableSpot(bike);
-                    if (spot1 != null)
-                    {
-                        spot1.AddVehicle(bike);
-                        WriteToFile();
-                        Console.WriteLine("Your bike is now parked.");
-                        Console.ReadKey();
-                    }
-                    else
-                        Console.WriteLine("No empty spots available.");
-                    Console.ReadKey();
-                    break;
-
-                case "bus":
-                    Bus bus = new Bus();
-                    bus.RegPlate = input;
-                    bus.ArriveTime = DateTime.Now;
-
-                    int placeToPark;
-                    placeToPark = SpotAsInt();
-                    if(placeToPark == 0 || placeToPark == -1)
-                    {
-                        Console.WriteLine("No empty spots available.");
-                    }
-                    else
-                    {
-                        for (int i = placeToPark; i < placeToPark + 4; i++)
+                        ParkingSpot spot;
+                        spot = FindAvailableSpot(car);
+                        if (spot != null)
                         {
-                            parkingSpots[i].vehicles.Add(bus);
-                            parkingSpots[i].AvailableSpace = 0;
+                            spot.AddVehicle(car);
+                            WriteToFile();
+                            Console.WriteLine("Your car is now parked.");
                         }
-                        WriteToFile();
-                    }
-                    Console.ReadKey();
-                    break;
+                        else
+                            Console.WriteLine("No empty spots available.");
+                        Console.ReadKey();
+                        break;
+
+                    case "mc":
+                        MC newMC = new MC();
+                        newMC.RegPlate = input;
+                        newMC.ArriveTime = DateTime.Now;
+
+                        ParkingSpot Spot;
+                        Spot = FindAvailableSpot(newMC);
+                        if (Spot != null)
+                        {
+                            Spot.AddVehicle(newMC);
+                            WriteToFile();
+                            Console.WriteLine("Your Mc is now parked.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No spots available to park in, sorry.");
+                        }
+                        Console.ReadKey();
+                        break;
+
+                    case "bike":
+                        Bike bike = new Bike();
+                        bike.RegPlate = input;
+                        bike.ArriveTime = DateTime.Now;
+
+                        ParkingSpot spot1;
+                        spot1 = FindAvailableSpot(bike);
+                        if (spot1 != null)
+                        {
+                            spot1.AddVehicle(bike);
+                            WriteToFile();
+                            Console.WriteLine("Your bike is now parked.");
+                            Console.ReadKey();
+                        }
+                        else
+                            Console.WriteLine("No empty spots available.");
+                        Console.ReadKey();
+                        break;
+
+                    case "bus":
+                        Bus bus = new Bus();
+                        bus.RegPlate = input;
+                        bus.ArriveTime = DateTime.Now;
+
+                        int placeToPark;
+                        placeToPark = SpotAsInt();
+                        if (placeToPark == 0 || placeToPark == -1)
+                        {
+                            Console.WriteLine("No empty spots available.");
+                        }
+                        else
+                        {
+                            for (int i = placeToPark; i < placeToPark + 4; i++)
+                            {
+                                parkingSpots[i].vehicles.Add(bus);
+                                parkingSpots[i].AvailableSpace = 0;
+                            }
+                            WriteToFile();
+                        }
+                        Console.ReadKey();
+                        break;
+                }
             }
         }
         public int SpotAsInt()
@@ -230,87 +251,74 @@ namespace Prague_Parking_2._1
         {
             Console.WriteLine("Which vehicle do you wish us to retrieve and exit with?");
             string VehicleExit = Console.ReadLine();
-            VehicleExit.ToUpper();
-            int index;
-            foreach (var item in parkingSpots)
+            string ValidRegPlate = DataValidation(VehicleExit);
+            if (ValidRegPlate == null)
             {
-                foreach (Vehicle v in item.vehicles)
+                Console.WriteLine("Sorry, but a vehicle with that registration plate doesnt exist here.");
+            }
+            else
+            {
+                int index;
+                foreach (var item in parkingSpots)
                 {
-                    if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.carSize)
+                    foreach (Vehicle v in item.vehicles)
                     {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        for (int i = 0; i < item.vehicles.Count; i++)
+                        if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.carSize)
                         {
-                            Console.WriteLine(item.vehicles[i]);
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            for (int i = 0; i < item.vehicles.Count; i++)
+                            {
+                                Console.WriteLine(item.vehicles[i]);
+                            }
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace += v.Size;
+                            item.vehicles.Remove(v);
+                            Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
+                            break;
                         }
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        item.vehicles.Remove(v);
-                        Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
-                        break;
-                    }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize)
-                    {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        item.vehicles.Remove(v);
-                        Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
-                        break;
-                    }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize && item != null)
-                    {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        // Divide and select the specific vehicle on that spot //
-                        for (int i = 0; i < item.vehicles.Count; i++)
+                        else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize)
                         {
-                            Console.WriteLine($"{item.vehicles[i]}, {i}");
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace += v.Size;
+                            item.vehicles.Remove(v);
+                            Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
+                            break;
                         }
-                        Console.WriteLine("Which vehicle would you like to remove?");
-                        int IndexChoise = int.Parse(Console.ReadLine());
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        item.vehicles.RemoveAt(IndexChoise);
-                        Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
-                        break;
-                    }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.bikeSize)
-                    {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        item.vehicles.Remove(v);
-                        Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
-                        break;
-                    }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.busSize)
-                    {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace = settings.ParkingSpotSize;
-                        item.vehicles.Remove(v);
-                        Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
-                        break;
+                        else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.bikeSize)
+                        {
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace += v.Size;
+                            item.vehicles.Remove(v);
+                            Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
+                            break;
+                        }
+                        else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.busSize)
+                        {
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace = settings.ParkingSpotSize;
+                            item.vehicles.Remove(v);
+                            Console.WriteLine($"To Pay: {TotalPrice} CZK at checkout time: {DateTime.Now}");
+                            break;
+                        }
                     }
                 }
+                WriteToFile();
             }
-            Control ctrl = new Control();
-            WriteToFile();
             Console.ReadKey();
 
         }
@@ -318,82 +326,90 @@ namespace Prague_Parking_2._1
         {
             Console.WriteLine("Please insert the regnumber of the vehicle you wish to move!");
             string VehicleExit = Console.ReadLine();
-            int index;
-            foreach (var item in parkingSpots)
+            string ValidRegPlate = DataValidation(VehicleExit);
+            if (ValidRegPlate == null)
             {
-                foreach (Vehicle v in item.vehicles)
+                Console.WriteLine("Sorry, but a vehicle with that registration plate doesnt exist here.");
+            }
+            else
+            {
+                int index;
+                foreach (var item in parkingSpots)
                 {
-                    if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.carSize)
+                    foreach (Vehicle v in item.vehicles)
                     {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        for (int i = 0; i < item.vehicles.Count; i++)
+                        if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.carSize)
                         {
-                            Console.WriteLine(item.vehicles[i]);
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            for (int i = 0; i < item.vehicles.Count; i++)
+                            {
+                                Console.WriteLine(item.vehicles[i]);
+                            }
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace += v.Size;
+                            Car CarCopy = new Car();
+                            CarCopy.RegPlate = v.RegPlate;
+                            CarCopy.Size = v.Size;
+                            CarCopy.ArriveTime = v.ArriveTime;
+                            Car VehicleReturn = CarCopy;
+                            item.vehicles.Remove(v);
+                            return VehicleReturn;
                         }
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        Car CarCopy = new Car();
-                        CarCopy.RegPlate = v.RegPlate;
-                        CarCopy.Size = v.Size;
-                        CarCopy.ArriveTime = v.ArriveTime;
-                        Car VehicleReturn = CarCopy;
-                        item.vehicles.Remove(v);
-                        return VehicleReturn;
-                    }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize)
-                    {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        MC MCCopy = new MC();
-                        MCCopy.RegPlate = v.RegPlate;
-                        MCCopy.Size = v.Size;
-                        MCCopy.ArriveTime = v.ArriveTime;
-                        MC VehicleReturn = MCCopy;
-                        item.vehicles.Remove(v);
-                        return VehicleReturn;
-                    }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.bikeSize)
-                    {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        Bike bikeCopy = new Bike();
-                        bikeCopy.RegPlate = v.RegPlate;
-                        bikeCopy.Size = v.Size;
-                        bikeCopy.ArriveTime = v.ArriveTime;
-                        Bike VehicleReturn = bikeCopy;
-                        item.vehicles.Remove(v);
-                        return VehicleReturn;
-                    }
-                    else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.busSize)
-                    {
-                        index = parkingSpots.IndexOf(item);
-                        Console.WriteLine($"Found at: {index}");
-                        string checkin = v.ArriveTime.ToString();
-                        string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
-                        string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
-                        item.AvailableSpace += v.Size;
-                        Bus busCopy = new Bus();
-                        busCopy.RegPlate = v.RegPlate;
-                        busCopy.Size = v.Size;
-                        busCopy.ArriveTime = v.ArriveTime;
-                        Bus VehicleReturn = busCopy;
-                        item.vehicles.Remove(v);
-                        return VehicleReturn;
+                        else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.mcSize)
+                        {
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace += v.Size;
+                            MC MCCopy = new MC();
+                            MCCopy.RegPlate = v.RegPlate;
+                            MCCopy.Size = v.Size;
+                            MCCopy.ArriveTime = v.ArriveTime;
+                            MC VehicleReturn = MCCopy;
+                            item.vehicles.Remove(v);
+                            return VehicleReturn;
+                        }
+                        else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.bikeSize)
+                        {
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace += v.Size;
+                            Bike bikeCopy = new Bike();
+                            bikeCopy.RegPlate = v.RegPlate;
+                            bikeCopy.Size = v.Size;
+                            bikeCopy.ArriveTime = v.ArriveTime;
+                            Bike VehicleReturn = bikeCopy;
+                            item.vehicles.Remove(v);
+                            return VehicleReturn;
+                        }
+                        else if (v.RegPlate.Equals(VehicleExit) && v.Size == settings.busSize)
+                        {
+                            index = parkingSpots.IndexOf(item);
+                            Console.WriteLine($"Found at: {index}");
+                            string checkin = v.ArriveTime.ToString();
+                            string TotalTime = Vehicle.ExitTimeCalculator(checkin).ToString();
+                            string TotalPrice = Vehicle.CalculateParkedTime(TotalTime, v.Size);
+                            item.AvailableSpace += v.Size;
+                            Bus busCopy = new Bus();
+                            busCopy.RegPlate = v.RegPlate;
+                            busCopy.Size = v.Size;
+                            busCopy.ArriveTime = v.ArriveTime;
+                            Bus VehicleReturn = busCopy;
+                            item.vehicles.Remove(v);
+                            return VehicleReturn;
+                        }
                     }
                 }
+                WriteToFile();
             }
-            WriteToFile();
             Console.ReadKey();
             return null;
         }
@@ -455,6 +471,195 @@ namespace Prague_Parking_2._1
                 Console.WriteLine("Done");
             }
         }
+        public string DataValidation(string CheckedRegNr)
+        {
+            Regex regCheck = new Regex(@"^[a-zA-Z0-9]{1,10}$");
+            if(!regCheck.Match(CheckedRegNr).Success)
+            {
+                return null;
+            }
+            CheckedRegNr = CheckedRegNr.ToUpper();
+            return CheckedRegNr;
+        }
+        public void ChangeSettings()
+        {
+            var selectSettings = AnsiConsole.Prompt(
+                new SelectionPrompt<string>()
+                    .Title("[Bold]What would you like to change?[/]")
+                    .PageSize(10)
+                    .AddChoices(new[] {
+                        "Bike Size", "MC Size", "Car Size", "Bus Size",
+                        "ParkingSpot Size", "ParkingHouse Size", "Back to menu"
+                    }));
+            switch (selectSettings)
+            {
+                case "Bike Size":
+                    try
+                    {
+                        int newSize;
+                        Console.WriteLine("What will the new size of Bike be?");
+                        bool ValidSize = int.TryParse(Console.ReadLine(), out newSize);
+                        if (ValidSize)
+                        {
+                            settings.bikeSize = newSize;
+                            WriteSettingsToFile();
+                            Console.WriteLine("Application will restart to apply changes...");
+                            Console.ReadKey();
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input.");
+                        }
+                    }
+                    catch (Exception em)
+                    {
+                        Console.WriteLine("Error in editing file.");
+                        Console.WriteLine(em.Message);
+                    }
+                    break;
+                case "MC Size":
+                    try
+                    {
+                        int newSize;
+                        Console.WriteLine("What will the new size of MC be?");
+                        bool ValidSize = int.TryParse(Console.ReadLine(), out newSize);
+                        if (ValidSize)
+                        {
+                            settings.mcSize = newSize;
+                            WriteSettingsToFile();
+                            Console.WriteLine("Application will restart to apply changes...");
+                            Console.ReadKey();
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input.");
+                        }
+                    }
+                    catch (Exception em)
+                    {
+                        Console.WriteLine("Error in editing file.");
+                        Console.WriteLine(em.Message);
+                    }
+                    break;
+                case "Car Size":
+                    try
+                    {
+                        int newSize;
+                        Console.WriteLine("What will the new size of Car be?");
+                        bool ValidSize = int.TryParse(Console.ReadLine(), out newSize);
+                        if (ValidSize)
+                        {
+                            settings.carSize = newSize;
+                            WriteSettingsToFile();
+                            Console.WriteLine("Application will restart to apply changes...");
+                            Console.ReadKey();
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input.");
+                        }
+                    }
+                    catch (Exception em)
+                    {
+                        Console.WriteLine("Error in editing file.");
+                        Console.WriteLine(em.Message);
+                    }
+                    break;
+                case "Bus Size":
+                    try
+                    {
+                        int newSize;
+                        Console.WriteLine("What will the new size of Bus be?");
+                        bool ValidSize = int.TryParse(Console.ReadLine(), out newSize);
+                        if (ValidSize)
+                        {
+                            settings.busSize = newSize;
+                            WriteSettingsToFile();
+                            Console.WriteLine("Application will restart to apply changes...");
+                            Console.ReadKey();
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input.");
+                        }
+                    }
+                    catch (Exception em)
+                    {
+                        Console.WriteLine("Error in editing file.");
+                        Console.WriteLine(em.Message);
+                    }
+                    break;
+                case "ParkingSpot Size":
+                    try
+                    {
+                        int newSize;
+                        Console.WriteLine("What will the new size of Parkingspots be?");
+                        bool ValidSize = int.TryParse(Console.ReadLine(), out newSize);
+                        if (ValidSize)
+                        {
+                            settings.ParkingSpotSize = newSize;
+                            WriteSettingsToFile();
+                            Console.WriteLine("Application will restart to apply changes...");
+                            Console.ReadKey();
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input.");
+                        }
+                    }
+                    catch (Exception em)
+                    {
+                        Console.WriteLine("Error in editing file.");
+                        Console.WriteLine(em.Message);
+                    }
+                    break;
+                case "ParkingHouse Size":
+                    try
+                    {
+                        int newSize;
+                        Console.WriteLine("What will the new size of the Parkinghouse be?");
+                        bool ValidSize = int.TryParse(Console.ReadLine(), out newSize);
+                        if (ValidSize)
+                        {
+                            settings.ParkingHouseSize = newSize;
+                            WriteSettingsToFile();
+                            Console.WriteLine("Application will restart to apply changes...");
+                            Console.ReadKey();
+                            Environment.Exit(0);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid Input.");
+                        }
+                    }
+                    catch (Exception em)
+                    {
+                        Console.WriteLine("Error in editing file.");
+                        Console.WriteLine(em.Message);
+                    }
+                    break;
+                case "Back to menu":
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void WriteSettingsToFile()
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.Converters.Add(new JavaScriptDateTimeConverter());
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+            string parkingHouseString = JsonConvert.SerializeObject(settings, Formatting.Indented);
+            using (StreamWriter writer = new StreamWriter("../../../DATA/ConfigSettings.json"))
+            {
+                writer.Write(parkingHouseString);
+            }
+        }
         public void ConstructParkingHouse()
         {
             int NumberOfPlots = settings.ParkingHouseSize;
@@ -464,22 +669,28 @@ namespace Prague_Parking_2._1
                 {
                     ParkingSpot parkingspot = new ParkingSpot();
                     int plot = 1 + i;
-                    parkingSpots.Add(new ParkingSpot { ParkingSpotNumber = plot });
+                    parkingSpots.Add(new ParkingSpot { ParkingSpotNumber = plot, AvailableSpace = settings.ParkingSpotSize, TotalSpace = settings.ParkingSpotSize });
                 }
+                WriteToFile();
             }
             else if (parkingSpots.Count >= NumberOfPlots)
             {
-                for (int j = parkingSpots.Count; j > NumberOfPlots; j--)
+                for (int j = parkingSpots.Count - 1; j >= NumberOfPlots - 1; j--)
                 {
                     if (parkingSpots[j].AvailableSpace == settings.ParkingSpotSize)
                     {
                         parkingSpots.RemoveAt(j);
                     }
-                    else if (parkingSpots[j].AvailableSpace != settings.ParkingSpotSize)
+                    else
                     {
                         NumberOfPlots += 1;
+                        //Console.WriteLine("Stop, you cant downsize when there is a vehicle parked there!");
+                        // [NOTE] Maybe Show what vehicle/vehicles are parked? //
+                        //Console.ReadKey();
+                        //break;
                     }
                 }
+                WriteToFile();
             }
         }
         public void PrintWithRegNum()
@@ -550,7 +761,7 @@ namespace Prague_Parking_2._1
                     }
                     else 
                     { 
-                        colour = "Orange"; 
+                        colour = "green"; 
                     }
                     Result += ($"P{j + 1}.[{colour}]X[/] ");
                 }

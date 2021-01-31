@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +9,6 @@ namespace Prague_Parking_2._1
 {
     public class GlobalSettings
     {
-        public string configFileName = "../../../DATA/ConfigSettings.json";
         public int ParkingSpotSize { get; set; }        // [DEFAULT]  4
         public int ParkingHouseSize { get; set; }           // [DEFAULT]  100
         public int bikeSize { get; set; }

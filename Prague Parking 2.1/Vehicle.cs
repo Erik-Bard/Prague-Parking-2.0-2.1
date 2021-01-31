@@ -75,7 +75,7 @@ namespace Prague_Parking_2._1
             }
             if (vehicleSize == settings.bikeSize)
             {
-                var valueAsString = PriceList.PriceListLog[4].Substring(5, 3);
+                var valueAsString = PriceList.PriceListLog[4].Substring(6, 2);
                 int valueAsInt = int.Parse(valueAsString);
                 TotalPrice = ((Total / 60) * valueAsInt).ToString();
             }

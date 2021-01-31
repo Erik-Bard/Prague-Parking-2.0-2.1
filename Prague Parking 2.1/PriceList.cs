@@ -37,11 +37,20 @@ namespace Prague_Parking_2._1
                         case "CAR":
                         try
                         {
+                            string newLinePriceCar;
                             Console.WriteLine("What will be the new price/hour for CAR?");
-                            int newPriceCar = int.Parse(Console.ReadLine());
-                            string newLinePrice = $"Car: {newPriceCar} CZK/Hour";
-                            PriceListLog[2] = newLinePrice;
-                            SerializePriceList();
+                            int newPriceCar;
+                            bool ValidNumber = int.TryParse(Console.ReadLine(), out newPriceCar);
+                            if(ValidNumber)
+                            {
+                                newLinePriceCar = $"Car: {newPriceCar} CZK/Hour";
+                                PriceListLog[2] = newLinePriceCar;
+                                SerializePriceList();
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid Input.");
+                            }
                         }
                         catch (Exception em)
                         {
@@ -52,11 +61,20 @@ namespace Prague_Parking_2._1
                         case "MC":
                             try
                             {
+                                string newLinePriceMc;
                                 Console.WriteLine("What will be the new price/hour for MC?");
-                                int newPriceMc = int.Parse(Console.ReadLine());
-                                string newLinePrice = $"MC: {newPriceMc} CZK/Hour";
-                                PriceListLog[3] = newLinePrice;
-                                SerializePriceList();
+                                int newPriceMc;
+                                bool ValidNumber = int.TryParse(Console.ReadLine(), out newPriceMc);
+                                if (ValidNumber)
+                                {
+                                    newLinePriceMc = $"MC: {newPriceMc} CZK/Hour";
+                                    PriceListLog[3] = newLinePriceMc;
+                                    SerializePriceList();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Input.");
+                                }
                             }
                             catch (Exception em)
                             {
@@ -67,11 +85,20 @@ namespace Prague_Parking_2._1
                         case "BIKE":
                             try
                             {
+                                string newLinePriceBike;
                                 Console.WriteLine("What will be the new price/hour for BIKE?");
-                                int newPriceBike = int.Parse(Console.ReadLine());
-                                string newLinePrice = $"Bike: {newPriceBike} CZK/Hour";
-                                PriceListLog[4] = newLinePrice;
-                                SerializePriceList();
+                                int newPriceBike;
+                                bool ValidNumber = int.TryParse(Console.ReadLine(), out newPriceBike);
+                                if (ValidNumber)
+                                {
+                                    newLinePriceBike = $"Bike: {newPriceBike} CZK/Hour";
+                                    PriceListLog[4] = newLinePriceBike;
+                                    SerializePriceList();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Input");
+                                }
                             }
                             catch (Exception em)
                             {
@@ -82,11 +109,20 @@ namespace Prague_Parking_2._1
                         case "BUS":
                             try
                             {
+                                string newLinePriceBus;
                                 Console.WriteLine("What will be the new price/hour for CAR?");
-                                int newPriceBus = int.Parse(Console.ReadLine());
-                                string newLinePrice = $"Bus: {newPriceBus} CZK/Hour";
-                                PriceListLog[5] = newLinePrice;
-                                SerializePriceList();
+                                int newPriceBus;
+                                bool ValidNumber = int.TryParse(Console.ReadLine(), out newPriceBus);
+                                if (ValidNumber)
+                                {
+                                    newLinePriceBus = $"Bus: {newPriceBus} CZK/Hour";
+                                    PriceListLog[5] = newLinePriceBus;
+                                    SerializePriceList();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid Input");
+                                }
                             }
                             catch (Exception em)
                             {

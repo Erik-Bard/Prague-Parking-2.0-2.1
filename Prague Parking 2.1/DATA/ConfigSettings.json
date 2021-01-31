@@ -1,8 +1,8 @@
 {
+  "ParkingSpotSize": 4,
+  "ParkingHouseSize": 100,
   "bikeSize": 1,
   "mcSize": 2,
   "carSize": 4,
-  "busSize": 16,
-  "ParkingSpotSize": 4,
-  "ParkingHouseSize": 100
+  "busSize": 16
 }
